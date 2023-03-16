@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Django Project | Dikri</title>
+</head>
+<body>
+    <h1>Selamat Datang Di {{judul}}</h1>
+    <h6>Penulis {{penulis}}</h6>
+    <p>Website ini di buat dengan Django</p>
+
+    <h3>ABOUT</h3>
+    <ul>
+        {% for link,name in nav%}
+            <li>
+                <a href="{{link}}">{{name}}</a>
+            </li>
+        {% endfor%}
+        </ul>
+</body>
+</html>
