@@ -7,6 +7,9 @@ pyhton -m venv Env
 aktivasi environment
 Env\Scripts\activate.buat
 
+membuat project
+django-admin startproject namaProject
+
 buat apps
 python manage.py startapp namaApps
 
