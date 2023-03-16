@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 def index(request):
-    contex = {
+    context = {
         'judul' : 'Website Django',
         'penulis' : 'Dikri Fauzan Amrulloh',
         'nav' : [
@@ -10,4 +10,4 @@ def index(request):
             ['/contact', 'CONTACT'],
         ]
     }
-    return render(request, 'index.html', contex)
+    return render(request, 'index.html', context)

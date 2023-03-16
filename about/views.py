@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    contex = {
+    context = {
         'judul' : 'Website Django',
         'penulis' : 'Dikri Fauzan Amrulloh',
         'nav' : [
@@ -11,4 +11,4 @@ def index(request):
             ['/contact', 'CONTACT'],
         ]
     }
-    return render(request, 'about/index.html', contex)
+    return render(request, 'about/index.html', context)
