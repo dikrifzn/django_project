@@ -1,0 +1,21 @@
+.jumbotron{
+    background-image: url("/static/img/background.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 300px;
+}
+.jumbotron .container{
+    padding-top: 160px;
+}
+.jumbotron img{
+    float: left;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: 100% 0%;
+    margin-right: 20px;
+}
+.post-box{
+    margin-top: 20px;
+    height: 400px;
+}

@@ -29,4 +29,15 @@ Templates Variable
 - membuat variable dict yang bisa di buat dengan banyak index.html
 - membuat navigasi dengan for loop dalam index.html
 
--membuat static img (bisa pakai variable)
+- membuat static img (bisa pakai variable)
+- tambah Scripts di bawah dalam settings.py : 
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+- menambah {% load static%} pada atas index.html
+
+HARI KETIGA :
+- menambah css
+-menambah bootsrap dan javascript
+
+*sama seperti static image, hanya di bagian src nya saja
