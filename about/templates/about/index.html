@@ -1,22 +1,62 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Django Project | Dikri</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Project | dikrifzn</title>
+    <link rel="stylesheet" href="{% static 'about/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'about/css/style.css' %}">
 </head>
 <body>
-    <img src="{% static 'img/django_about.png' %}" alt="">
-    <h1>Selamat Datang Di {{judul}}</h1>
-    <h6>Penulis {{penulis}}</h6>
-    <p>Website ini di buat dengan Django</p>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              {% for link,name in nav %}
+                {% if link == "/about" %}
+                  <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{link}}">{{name}}</a>
+                  </li>
+                {% else %}
+                  <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="{{link}}">{{name}}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-white">
+                <img src="{% static 'about/img/photo.jpg' %}" alt="">
+            <h1 class="display-5 pt-3"><strong>{{penulis}}</strong></h1>
+            <p class="lead">Programmer and Data Analyst</p>
+        </div>
+    </div>
+    <div class="nav-profile">
 
-    <h3>ABOUT</h3>
-    <ul>
-        {% for link,name in nav%}
-            <li>
-                <a href="{{link}}">{{name}}</a>
-            </li>
-        {% endfor%}
-        </ul>
+    </div>
+    {% for post in Posts reversed %}
+    <div class="post-box container bg-secondary bg-opacity-10 shadow">
+        <div class="post p-3">
+            <h3>{{penulis}}</h3>
+            <h4>{{post.judul}}</h4>
+            <img src="" alt="">
+            <p>{{post.body}}</p>
+        </div>
+    </div>
+    {% endfor %}
+    <script src="{% static 'about/js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
 </body>
 </html>

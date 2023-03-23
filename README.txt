@@ -38,6 +38,24 @@ STATICFILES_DIRS = [
 
 HARI KETIGA :
 - menambah css
--menambah bootsrap dan javascript
+- menambah bootsrap dan javascript
 
 *sama seperti static image, hanya di bagian src nya saja
+
+HARI KEEMPAT :
+- membuat model pada apps
+- menampilkan model pada views (menampilkan database)
+- mengatur bahasa sql pada setting.py dengan bahasa databse yg akan di gunakan
+- buat class pada models.py untuk di koneksikan dengan data base
+- mengatur admin script pada admin.py
+from .models import namaClassDB
+admin.site.register(namaClassDB);
+- membuat superuser agar bisa login ke /admin
+pada cmd ketik :
+python manage.py createsuperuser
+
+- menambah variable db pada views def index()
+views_post = Post.objects.all()
+lalu masukan ke context
+- masukan variable pada index.html dengan loop
+- meloop dari belakang dengan menambah reversed setelah Post
