@@ -17,6 +17,14 @@
                 <a href="{{link}}">{{name}}</a>
             </li>
         {% endfor%}
-        </ul>
+    </ul>
+    <hr>
+    {% for data in data reversed %}
+        <h3>{{data.judul}}</h3>
+        <h5>{{data.waktu}}</h5>
+        <p>{{data.content}}</p>
+        <p>{{data.email}}</p>
+        <hr>
+    {% endfor %}
 </body>
 </html>

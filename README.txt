@@ -1,4 +1,4 @@
-HARI PERTAMA :
+*HARI PERTAMA :
 buat folder
 
 install python environment
@@ -18,7 +18,7 @@ pyhton manage.py runserver
 
 *sampai buat lokal urls di apps
 
-HARI KEDUA :
+*HARI KEDUA :
 Menambah templates dalam apps
 - masuk ke settings.py
 - tambah pada installed apps 'namaapps'
@@ -36,13 +36,13 @@ STATICFILES_DIRS = [
 ]
 - menambah {% load static%} pada atas index.html
 
-HARI KETIGA :
+*HARI KETIGA :
 - menambah css
 - menambah bootsrap dan javascript
 
 *sama seperti static image, hanya di bagian src nya saja
 
-HARI KEEMPAT :
+*HARI KEEMPAT :
 - membuat model pada apps
 - menampilkan model pada views (menampilkan database)
 - mengatur bahasa sql pada setting.py dengan bahasa databse yg akan di gunakan
@@ -59,3 +59,42 @@ views_post = Post.objects.all()
 lalu masukan ke context
 - masukan variable pada index.html dengan loop
 - meloop dari belakang dengan menambah reversed setelah Post
+- membuat persiapan imigrasi :
+python manage.py makemigrations
+
+- mengimigrasi dari pyhton ke database :
+python manage.py migrate
+
+- lalu jalankan server
+
+*HARI KELIMA :
+- belajar Models Field :
+    CharField(max_length=jumlahHuruf) --> varchar pada databsae
+    option :
+        - max_length=jumlahHuruf (wajib)
+        - null=True/False (defaul itu False), field tidak boleh kosong
+        - blank=True/False (defaul itu False), field pada validasi tidak boleh kosong
+        - default='isidefault'
+    TextField()
+    DateTimeField(auto_now_add=True)
+    EmailField()
+
+- Object Relational Mapping dengan shelll :
+python manage.py shell'
+    from contact.models import Data
+    Data.objects.create(id="value") --> membuat data
+    Data.objects.all()[index] --> membaca data
+    Data.objects.all()[index].delete() --> menghapus data
+    Data.objects.all()[index].id = "value" --> mengubah data
+    Data.objects.all()[index].save() --> jangan lupa save setelah di ubah
+
+- Querysets dengan shell :
+    - Data.objects.all()[index] tidak di sarankan
+    - Data.objects.get(id=index) lebih baik dengan primary key yaitu id dan hanya satu data
+    - Data.objects.filter(category="berita") untuk menampilkan banyak data
+    - Data.objects.exclude(category="gosip") untuk menampilkan data kecuali gosip
+    - Data.objects.get(judul__iexact="hallo world!") menampilkan data tidak casesensitif
+    - Data.objects.order_by(judul) untuk menampilkan sesuai abjad jika ingin reverse maka tambah - depan judul
+    - Data.objects.all().values('id')
+
+bisa di lihat di web django querysets
